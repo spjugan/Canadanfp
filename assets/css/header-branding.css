@@ -7,13 +7,13 @@
 .header-brand {
   align-items: center;
   display: grid;
-  gap: 16px;
-  grid-template-columns: 80px minmax(0, 1fr) 80px;
+  gap: 10px;
+  grid-template-columns: 80px max-content 80px;
   grid-column: 1;
   grid-row: 1;
   justify-self: center;
-  max-width: 860px;
-  width: 100%;
+  max-width: 100%;
+  width: fit-content;
   text-align: center;
 }
 
