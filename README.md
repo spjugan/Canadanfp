@@ -7,7 +7,7 @@ Employee Database
 Run `Run Dashboard.bat` to start a local web server and open the dashboard in Edge or Chrome. The dashboard automatically loads the two workbooks and checks for updates every 30 seconds. Do not open `index.html` directly with a `file:///` URL because browsers block workbook requests from local HTML files.
 
 ## Workbook refresh
-On localhost, the dashboard refreshes the configured workbooks every 30 seconds. On GitHub Pages, choose both files in the workbook bar and select **Load workbooks**; the files are read locally in your browser and are not uploaded. Re-select the files after receiving updated copies. Current sources are:
+The dashboard refreshes the configured workbooks every 30 seconds. Current sources are:
 - `data/NFP - Employee Details.xlsx`: employee roster and employee-reported expertise.
 - `data/NFP_Emp Skill-Set Matrix  Info.xlsx`: the `Process training Matrix` sheet, where employee names are columns and process/task status is recorded per employee.
 
