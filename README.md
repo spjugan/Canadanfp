@@ -6,12 +6,12 @@ Employee Database
 ## Run
 Run `Run Dashboard.bat` to start a local web server and open the dashboard in Edge or Chrome. The dashboard automatically loads the two workbooks and checks for updates every 30 seconds. Do not open `index.html` directly with a `file:///` URL because browsers block workbook requests from local HTML files.
 
-## Hosted refresh
-Keep the two workbooks in the `data` folder:
-- Personal Details - Updated.xlsx
-- AON Canada - Your Skill matters.xlsx
+## Workbook refresh
+The dashboard refreshes the configured workbooks every 30 seconds. Current sources are:
+- `data/NFP - Employee Details.xlsx`: employee roster and employee-reported expertise.
+- `data/NFP_Emp Skill-Set Matrix  Info.xlsx`: the `Process training Matrix` sheet, where employee names are columns and process/task status is recorded per employee.
 
-When a new row is added to either workbook, the dashboard will include it after the next automatic check. Keep the workbook filenames unchanged.
+The roster reader recognizes common header variations (for example `Emp ID` or `Employee ID`, `Emp Name` or `Employee Name`, and `Supervisor` or `Manager`). Matrix employees are joined to roster records by normalized name, including `Last, First` name order. `O` is shown as Training Pending and `P` as Training Completed. Unmatched names are skipped and reported in the dashboard status. Update `assets/js/config.js` if the source filenames change.
 
 ## Structure
 - `index.html`: page layout
