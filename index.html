@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/directory.css">
   <link rel="stylesheet" href="assets/css/profile.css">
+  <link rel="stylesheet" href="assets/css/workbook-loader.css">
   <style>.gender-kpi{min-width:0}.gender-visual{margin-top:5px}.gender-counts{display:grid;gap:2px;font-size:11px}.gender-counts b{display:inline;font-size:15px;margin:0}.gender-counts span{font-size:10px}.charts:has(.member-photo:not([hidden])){grid-template-columns:repeat(3,1fr)}.member-photo img{display:block;width:100%;height:150px;object-fit:cover;border-radius:8px}.member-photo h2{margin-bottom:10px}@media(max-width:900px){.charts:has(.member-photo:not([hidden])){grid-template-columns:1fr 1fr}.member-photo{grid-column:1/-1}}@media(max-width:600px){.charts:has(.member-photo:not([hidden])){grid-template-columns:1fr}}</style>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
@@ -16,6 +17,7 @@
 </head>
 <body>
 <header><div class="logo"><img src="assets/maple-leaf.svg" alt="Maple leaf logo"></div><div><h1>Employee Information Dashboard</h1><p>Employee ID linked · Personal details · Excel powered</p></div><div class="actions"><button id="exportBtn">Export filtered</button><button id="darkBtn">Dark mode</button></div></header>
+<section id="workbookLoader" class="workbook-loader" hidden><label for="employeeWorkbook">Employee details workbook<input id="employeeWorkbook" type="file" accept=".xlsx,.xls"></label><label for="skillsWorkbook">Process training matrix<input id="skillsWorkbook" type="file" accept=".xlsx,.xls"></label><button id="loadWorkbooks" type="button" disabled>Load workbooks</button><span>Files are read in this browser and are not uploaded.</span></section>
 <div class="layout"><aside><h3>FILTERS</h3><input id="search" placeholder="Search employee, ID or skill"><select id="bu"></select><select id="phase"></select><select id="desig"></select><select id="dept"></select><select id="loc"></select><select id="mgr"></select><select id="skill"></select><button id="resetBtn" class="reset">Reset filters</button><div id="status" class="note">Loading hosted workbooks...</div></aside>
 <main><section class="kpis"><article><span>Employees</span><b id="kEmp">0</b></article><article><span>Unique Skills</span><b id="kSkills">0</b></article><article class="gender-kpi"><span>Gender</span><div class="gender-visual"><div class="gender-counts"><span>Male <b id="kMale">0</b></span><span>Female <b id="kFemale">0</b></span></div></div></article><article><span>Certified</span><b id="kCert">0</b></article><article><span>Multi-Skilled</span><b id="kMulti">0</b></article></section>
 <section class="charts"><article><h2>Employees by Business Unit</h2><canvas id="buChart"></canvas></article><article><h2>Top Skills</h2><canvas id="skillChart"></canvas></article><article id="teamMemberPhoto" class="member-photo" hidden><h2 id="teamMemberPhotoName">Team Member</h2><img id="teamMemberPhotoImage" alt=""></article></section>
