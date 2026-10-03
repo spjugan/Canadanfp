@@ -1,0 +1,82 @@
+.employee-profile {
+  margin-top: 11px;
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.profile-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 12px;
+}
+
+.profile-heading h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.profile-heading p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+#maskDetails {
+  color: var(--red2);
+  background: #fff0f0;
+  white-space: nowrap;
+}
+
+.profile-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.profile-sections section {
+  min-width: 0;
+}
+
+.profile-sections h3 {
+  margin: 16px 0 8px;
+  color: var(--red2);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.profile-sections dl {
+  display: grid;
+  grid-template-columns: minmax(125px, 34%) 1fr;
+  gap: 7px 12px;
+  margin: 0;
+  font-size: 13px;
+}
+
+.profile-sections dt {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.profile-sections dd {
+  margin: 0;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .profile-sections {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .profile-heading {
+    flex-direction: column;
+  }
+}
